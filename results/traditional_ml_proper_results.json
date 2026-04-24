@@ -1,0 +1,71 @@
+{
+  "model_type": "Traditional ML (Visual Features)",
+  "features": "Facial landmarks + color histograms",
+  "data_split": "GroupKFold (10-fold)",
+  "seed": 42,
+  "results": {
+    "Random Forest": {
+      "mean_accuracy": 0.5111111111111111,
+      "std_accuracy": 0.11072850793330416,
+      "mean_precision": 0.51,
+      "std_precision": 0.10225241100118644,
+      "mean_recall": 0.5616666666666668,
+      "std_recall": 0.1439618004888797,
+      "mean_auc": 0.49083333333333334,
+      "std_auc": 0.09935206758459197,
+      "ci_accuracy": [
+        0.42761601532868376,
+        0.5946062068935384
+      ],
+      "ci_auc": [
+        0.41591666955823464,
+        0.565749997108432
+      ],
+      "p_value_accuracy": 0.7702254068769189,
+      "p_value_auc": 0.7881906390718939,
+      "significant": false
+    },
+    "SVM (RBF)": {
+      "mean_accuracy": 0.5,
+      "std_accuracy": 0.04303314829119354,
+      "mean_precision": 0.08333333333333333,
+      "std_precision": 0.17078251276599332,
+      "mean_recall": 0.05833333333333333,
+      "std_recall": 0.1181453906563152,
+      "mean_auc": 0.47416666666666674,
+      "std_auc": 0.10496030995889194,
+      "ci_accuracy": [
+        0.4675507517851064,
+        0.5324492482148936
+      ],
+      "ci_auc": [
+        0.395021094338991,
+        0.5533122389943425
+      ],
+      "p_value_accuracy": 1.0,
+      "p_value_auc": 0.4790978304458443,
+      "significant": false
+    },
+    "SVM (Linear)": {
+      "mean_accuracy": 0.5333333333333334,
+      "std_accuracy": 0.11722748803338441,
+      "mean_precision": 0.5288095238095238,
+      "std_precision": 0.11272973519563907,
+      "mean_recall": 0.5616666666666668,
+      "std_recall": 0.20303940504246953,
+      "mean_auc": 0.4654166666666667,
+      "std_auc": 0.1193450005935174,
+      "ci_accuracy": [
+        0.44493766608947966,
+        0.6217290005771872
+      ],
+      "ci_auc": [
+        0.3754242840210729,
+        0.5554090493122605
+      ],
+      "p_value_accuracy": 0.41576032503114774,
+      "p_value_auc": 0.40725342528967384,
+      "significant": false
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "model_config": {
+    "img_size": 128,
+    "batch_size": 4,
+    "epochs": 20,
+    "learning_rate": 0.0001,
+    "training": "Two-phase (frozen + fine-tuned)"
+  },
+  "data_split": "GroupKFold (5-fold)",
+  "baseline_results": {
+    "XceptionNet": {
+      "mean_accuracy": 0.52,
+      "std_accuracy": 0.07366441665411963,
+      "mean_auc": 0.6613884297520661,
+      "std_auc": 0.07253033817378851,
+      "ci_accuracy": [
+        0.4177373954767094,
+        0.6222626045232906
+      ],
+      "ci_auc": [
+        0.5607001785515883,
+        0.762076680952544
+      ],
+      "p_value_accuracy": 0.6159697502616734,
+      "p_value_auc": 0.011244703067974187,
+      "significant": false
+    },
+    "ResNet50": {
+      "mean_accuracy": 0.509090909090909,
+      "std_accuracy": 0.018181818181818167,
+      "mean_auc": 0.5370082644628098,
+      "std_auc": 0.02854629198597409,
+      "ci_accuracy": [
+        0.4838504990436564,
+        0.5343313191381617
+      ],
+      "ci_auc": [
+        0.49737965813480745,
+        0.5766368707908122
+      ],
+      "p_value_accuracy": 0.37390096630006103,
+      "p_value_auc": 0.060501315855131715,
+      "significant": false
+    }
+  },
+  "seed": 42
+}

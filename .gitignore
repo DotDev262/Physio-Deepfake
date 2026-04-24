@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+.devenv/
+
+# Results and Cache
+.ipynb_checkpoints
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local configuration
+.env
+.direnv/
+.vscode/
+.idea/
+
+# Large Dataset Files (Ignore if you want to upload zip separately)
+# *.zip
+# sdfvd_dataset/
