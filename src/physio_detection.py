@@ -227,10 +227,15 @@ class EnhancedPhysioFeatureExtractor:
         rgb_signals, ear_signals = [], []
         face_pos, nose_pos, lm_seq = [], [], []
         
+        frame_count = 0
+        max_frames = 150  # Cap at 150 frames (~5 seconds) for extraction speedup
         while cap.isOpened():
+            if frame_count >= max_frames:
+                break
             ret, frame = cap.read()
             if not ret:
                 break
+            frame_count += 1
             
             frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=frame_rgb)

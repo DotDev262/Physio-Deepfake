@@ -54,7 +54,7 @@ class Config:
     dataset_path: str = "./sdfvd_dataset/SDFVD"
     real_folder: str = "videos_real"
     fake_folder: str = "videos_fake"
-    max_frames: int = 300 
+    max_frames: int = 150 
     n_folds: int = 10
     model_path: str = "face_landmarker.task"
 
