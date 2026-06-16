@@ -1,0 +1,20 @@
+{
+  "mean_accuracy": 0.5355555555555556,
+  "mean_auc": 0.5133086419753086,
+  "p_value": 0.0625,
+  "n_features": 5,
+  "fold_accuracies": [
+    0.45,
+    0.45,
+    0.45,
+    0.55,
+    0.7777777777777778
+  ],
+  "top_features": [
+    "EAR Min",
+    "Eye Mov Std",
+    "EAR Mean",
+    "Heart Rate (rPPG)",
+    "Eye Mov Max"
+  ]
+}

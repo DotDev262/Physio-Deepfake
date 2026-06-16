@@ -1,0 +1,10 @@
+{
+  "stage1_visual_accuracy": 0.5454545454545454,
+  "stage2_cascade_accuracy": 0.5,
+  "certain_cases_accuracy": 0.5,
+  "uncertain_cases_accuracy": 0.5,
+  "num_certain": 8,
+  "num_uncertain": 14,
+  "total_samples": 22,
+  "improvement_from_cascade": -0.045454545454545414
+}

@@ -1,0 +1,315 @@
+{
+  "mean_accuracy": 0.6322222222222222,
+  "mean_auc": 0.7189629629629629,
+  "p_value": 0.011001477164637468,
+  "feature_importance": [
+    {
+      "feature": "EAR_Min",
+      "importance": 0.1918053926323693
+    },
+    {
+      "feature": "Asymmetry_Std",
+      "importance": 0.05833043057289483
+    },
+    {
+      "feature": "Blink_Valid",
+      "importance": 0.04903145505591195
+    },
+    {
+      "feature": "Eye_Mov_Std",
+      "importance": 0.04214214833503131
+    },
+    {
+      "feature": "Eye_Mov_Max",
+      "importance": 0.03504044326720403
+    },
+    {
+      "feature": "Eye_Closed_Pct",
+      "importance": 0.03499889703613099
+    },
+    {
+      "feature": "EAR_Max",
+      "importance": 0.03264752989393143
+    },
+    {
+      "feature": "Color_Diff_G",
+      "importance": 0.03121586707792896
+    },
+    {
+      "feature": "Mouth_Mean",
+      "importance": 0.02456180046771076
+    },
+    {
+      "feature": "EAR_Std",
+      "importance": 0.023506555860442556
+    },
+    {
+      "feature": "EAR_Mean",
+      "importance": 0.02289481948498401
+    },
+    {
+      "feature": "Asymmetry_Mean",
+      "importance": 0.021890431643657258
+    },
+    {
+      "feature": "Color_Skew",
+      "importance": 0.021809609757633918
+    },
+    {
+      "feature": "Breathing_Range",
+      "importance": 0.02169357553584515
+    },
+    {
+      "feature": "B_Std",
+      "importance": 0.021375624789722554
+    },
+    {
+      "feature": "CHROM_SNR",
+      "importance": 0.021242091992885206
+    },
+    {
+      "feature": "Yaw_Max",
+      "importance": 0.021180792336508693
+    },
+    {
+      "feature": "Yaw_Mean",
+      "importance": 0.019283953645549263
+    },
+    {
+      "feature": "Breathing_Amp_Std",
+      "importance": 0.017496471908205972
+    },
+    {
+      "feature": "GREEN_HR",
+      "importance": 0.016385660209695313
+    },
+    {
+      "feature": "Breathing_Mean",
+      "importance": 0.014940476468472677
+    },
+    {
+      "feature": "Mouth_Mov_Mean",
+      "importance": 0.014896929132862448
+    },
+    {
+      "feature": "Mouth_Open_Count",
+      "importance": 0.014849880203060514
+    },
+    {
+      "feature": "Eye_Correlation",
+      "importance": 0.014208375644896182
+    },
+    {
+      "feature": "R_Std",
+      "importance": 0.013252420686085469
+    },
+    {
+      "feature": "Yaw_Std",
+      "importance": 0.012609487178836429
+    },
+    {
+      "feature": "Color_Consistency",
+      "importance": 0.012468596776227145
+    },
+    {
+      "feature": "Pose_Mov_Std",
+      "importance": 0.012142620926074179
+    },
+    {
+      "feature": "Color_Drift",
+      "importance": 0.011074575999808853
+    },
+    {
+      "feature": "Pitch_Mean",
+      "importance": 0.010918095361230062
+    },
+    {
+      "feature": "Breathing_Max",
+      "importance": 0.01017848239254011
+    },
+    {
+      "feature": "Pitch_Std",
+      "importance": 0.009846511834207209
+    },
+    {
+      "feature": "GREEN_SNR",
+      "importance": 0.009637336746724746
+    },
+    {
+      "feature": "Mouth_Mov_Std",
+      "importance": 0.00894067149796933
+    },
+    {
+      "feature": "Blink_Rate",
+      "importance": 0.008205775382886025
+    },
+    {
+      "feature": "CHROM_HR",
+      "importance": 0.007821873610138303
+    },
+    {
+      "feature": "Pose_Mov_Mean",
+      "importance": 0.007109194868019176
+    },
+    {
+      "feature": "Roll_Max",
+      "importance": 0.006974756391484615
+    },
+    {
+      "feature": "Eye_Opening_Speed",
+      "importance": 0.006861875395491025
+    },
+    {
+      "feature": "HR_Mean",
+      "importance": 0.00669162229012598
+    },
+    {
+      "feature": "HR_Min",
+      "importance": 0.006522583778648947
+    },
+    {
+      "feature": "Breathing_Amp_Mean",
+      "importance": 0.00643487963678612
+    },
+    {
+      "feature": "Pitch_Max",
+      "importance": 0.005813667218511013
+    },
+    {
+      "feature": "Color_Diff_R",
+      "importance": 0.0054509153840831956
+    },
+    {
+      "feature": "Blink_Var",
+      "importance": 0.00503854552955476
+    },
+    {
+      "feature": "Roll_Std",
+      "importance": 0.0047193944604469506
+    },
+    {
+      "feature": "POS_SNR",
+      "importance": 0.0041924225175783885
+    },
+    {
+      "feature": "Eye_Mov_Mean",
+      "importance": 0.003998513148858734
+    },
+    {
+      "feature": "Pose_Mov_Max",
+      "importance": 0.0030120351924496063
+    },
+    {
+      "feature": "EAR_Range",
+      "importance": 0.002326979595436714
+    },
+    {
+      "feature": "HR_Range",
+      "importance": 0.0020153936334153465
+    },
+    {
+      "feature": "G_Std",
+      "importance": 0.0018397083315268036
+    },
+    {
+      "feature": "Color_Diff_B",
+      "importance": 0.0016122299633597004
+    },
+    {
+      "feature": "Roll_Mean",
+      "importance": 0.0009110448760849768
+    },
+    {
+      "feature": "POS_HR",
+      "importance": 0.0008651058013536468
+    },
+    {
+      "feature": "Breathing_Std",
+      "importance": 0.0006005487740259435
+    },
+    {
+      "feature": "Breathing_Rate",
+      "importance": 0.000503293852865465
+    },
+    {
+      "feature": "HR_Std",
+      "importance": 0.0005018844876622716
+    },
+    {
+      "feature": "GR_Ratio",
+      "importance": 0.0003455337912772875
+    },
+    {
+      "feature": "Mouth_Std",
+      "importance": 0.00031677191894074683
+    },
+    {
+      "feature": "HR_Variability",
+      "importance": 0.00025616328540375256
+    },
+    {
+      "feature": "Mouth_Close_Count",
+      "importance": 0.00023910953159183846
+    },
+    {
+      "feature": "Eye_Mov_Count",
+      "importance": 0.00017982469213474592
+    },
+    {
+      "feature": "CHROM_Valid",
+      "importance": 5.860033060056812e-05
+    },
+    {
+      "feature": "Mouth_Range",
+      "importance": 4.2324338921835885e-05
+    },
+    {
+      "feature": "HR_Max",
+      "importance": 2.5568448290877e-05
+    },
+    {
+      "feature": "Mouth_Max",
+      "importance": 1.3807930039559765e-05
+    },
+    {
+      "feature": "POS_Valid",
+      "importance": 3.616933740099642e-08
+    },
+    {
+      "feature": "GREEN_Valid",
+      "importance": 3.0894181707630363e-09
+    },
+    {
+      "feature": "Breathing_Valid",
+      "importance": 1.0630441325790257e-14
+    },
+    {
+      "feature": "Breathing_Ex1",
+      "importance": 0.0
+    },
+    {
+      "feature": "Eye_Extra1",
+      "importance": 0.0
+    },
+    {
+      "feature": "Color_Ex2",
+      "importance": 0.0
+    },
+    {
+      "feature": "Eye_Extra3",
+      "importance": 0.0
+    },
+    {
+      "feature": "Color_Ex1",
+      "importance": 0.0
+    },
+    {
+      "feature": "Eye_Extra2",
+      "importance": 0.0
+    },
+    {
+      "feature": "Breathing_Ex2",
+      "importance": 0.0
+    }
+  ]
+}

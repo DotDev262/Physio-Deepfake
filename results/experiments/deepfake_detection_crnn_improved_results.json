@@ -1,0 +1,25 @@
+{
+  "test_accuracy": 43.75,
+  "test_precision": 46.42857015132904,
+  "test_recall": 81.25,
+  "test_auc": 0.490234375,
+  "test_loss": 1.3148736953735352,
+  "train_samples": 148,
+  "val_samples": 32,
+  "test_samples": 32,
+  "model_config": {
+    "backbone": "EfficientNetB0",
+    "lstm_units": 128,
+    "seq_length": 20,
+    "img_size": 224,
+    "batch_size": 4,
+    "epochs": 30,
+    "learning_rate": 0.0001,
+    "attention_heads": 4
+  },
+  "paper_comparison": {
+    "Traditional ML": 72.73,
+    "Baseline CRNN": 68.18,
+    "CRNN Improved (this run)": 43.75
+  }
+}

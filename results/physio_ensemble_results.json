@@ -1,0 +1,23 @@
+{
+  "Random Forest": {
+    "accuracy": 0.5789473684210527
+  },
+  "Extra Trees": {
+    "accuracy": 0.47368421052631576
+  },
+  "SVM (RBF)": {
+    "accuracy": 0.5789473684210527
+  },
+  "Logistic Regression": {
+    "accuracy": 0.5263157894736842
+  },
+  "Gradient Boosting": {
+    "accuracy": 0.47368421052631576
+  },
+  "Hard Voting Ensemble": {
+    "accuracy": 0.5789473684210527
+  },
+  "Soft Voting Ensemble": {
+    "accuracy": 0.42105263157894735
+  }
+}

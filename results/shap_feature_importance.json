@@ -1,0 +1,279 @@
+{
+  "model_accuracy": 0.3333333333333333,
+  "analysis_type": "SHAP Feature Importance (Sampled)",
+  "total_features": 232,
+  "top_50_features": [
+    {
+      "rank": 1,
+      "feature": "feature_217",
+      "mean_shap_value": 0.021096119929453264
+    },
+    {
+      "rank": 2,
+      "feature": "feature_216",
+      "mean_shap_value": 0.02109611992945326
+    },
+    {
+      "rank": 3,
+      "feature": "feature_116",
+      "mean_shap_value": 0.018502284752284753
+    },
+    {
+      "rank": 4,
+      "feature": "feature_117",
+      "mean_shap_value": 0.018502284752284753
+    },
+    {
+      "rank": 5,
+      "feature": "feature_69",
+      "mean_shap_value": 0.01587149270482604
+    },
+    {
+      "rank": 6,
+      "feature": "feature_68",
+      "mean_shap_value": 0.01587149270482604
+    },
+    {
+      "rank": 7,
+      "feature": "feature_10",
+      "mean_shap_value": 0.009007936507936508
+    },
+    {
+      "rank": 8,
+      "feature": "feature_11",
+      "mean_shap_value": 0.009007936507936506
+    },
+    {
+      "rank": 9,
+      "feature": "feature_113",
+      "mean_shap_value": 0.007985660173160174
+    },
+    {
+      "rank": 10,
+      "feature": "feature_112",
+      "mean_shap_value": 0.007985660173160174
+    },
+    {
+      "rank": 11,
+      "feature": "feature_192",
+      "mean_shap_value": 0.0075992063492063494
+    },
+    {
+      "rank": 12,
+      "feature": "feature_193",
+      "mean_shap_value": 0.0075992063492063494
+    },
+    {
+      "rank": 13,
+      "feature": "feature_141",
+      "mean_shap_value": 0.0071666666666666675
+    },
+    {
+      "rank": 14,
+      "feature": "feature_140",
+      "mean_shap_value": 0.0071666666666666675
+    },
+    {
+      "rank": 15,
+      "feature": "feature_155",
+      "mean_shap_value": 0.007163139329805997
+    },
+    {
+      "rank": 16,
+      "feature": "feature_154",
+      "mean_shap_value": 0.0071631393298059965
+    },
+    {
+      "rank": 17,
+      "feature": "feature_170",
+      "mean_shap_value": 0.006929112554112555
+    },
+    {
+      "rank": 18,
+      "feature": "feature_171",
+      "mean_shap_value": 0.006929112554112555
+    },
+    {
+      "rank": 19,
+      "feature": "feature_203",
+      "mean_shap_value": 0.006706349206349206
+    },
+    {
+      "rank": 20,
+      "feature": "feature_202",
+      "mean_shap_value": 0.006706349206349206
+    },
+    {
+      "rank": 21,
+      "feature": "feature_152",
+      "mean_shap_value": 0.006542207792207794
+    },
+    {
+      "rank": 22,
+      "feature": "feature_153",
+      "mean_shap_value": 0.006542207792207793
+    },
+    {
+      "rank": 23,
+      "feature": "feature_64",
+      "mean_shap_value": 0.006133156966490301
+    },
+    {
+      "rank": 24,
+      "feature": "feature_65",
+      "mean_shap_value": 0.006133156966490301
+    },
+    {
+      "rank": 25,
+      "feature": "feature_17",
+      "mean_shap_value": 0.00613095238095238
+    },
+    {
+      "rank": 26,
+      "feature": "feature_16",
+      "mean_shap_value": 0.00613095238095238
+    },
+    {
+      "rank": 27,
+      "feature": "feature_115",
+      "mean_shap_value": 0.005984126984126984
+    },
+    {
+      "rank": 28,
+      "feature": "feature_114",
+      "mean_shap_value": 0.005984126984126984
+    },
+    {
+      "rank": 29,
+      "feature": "feature_35",
+      "mean_shap_value": 0.005466570466570467
+    },
+    {
+      "rank": 30,
+      "feature": "feature_34",
+      "mean_shap_value": 0.005466570466570467
+    },
+    {
+      "rank": 31,
+      "feature": "feature_41",
+      "mean_shap_value": 0.005455898268398269
+    },
+    {
+      "rank": 32,
+      "feature": "feature_40",
+      "mean_shap_value": 0.005455898268398269
+    },
+    {
+      "rank": 33,
+      "feature": "feature_26",
+      "mean_shap_value": 0.005119047619047619
+    },
+    {
+      "rank": 34,
+      "feature": "feature_27",
+      "mean_shap_value": 0.005119047619047619
+    },
+    {
+      "rank": 35,
+      "feature": "feature_22",
+      "mean_shap_value": 0.005
+    },
+    {
+      "rank": 36,
+      "feature": "feature_23",
+      "mean_shap_value": 0.005
+    },
+    {
+      "rank": 37,
+      "feature": "feature_42",
+      "mean_shap_value": 0.005
+    },
+    {
+      "rank": 38,
+      "feature": "feature_43",
+      "mean_shap_value": 0.005
+    },
+    {
+      "rank": 39,
+      "feature": "feature_181",
+      "mean_shap_value": 0.004907407407407408
+    },
+    {
+      "rank": 40,
+      "feature": "feature_180",
+      "mean_shap_value": 0.004907407407407406
+    },
+    {
+      "rank": 41,
+      "feature": "feature_86",
+      "mean_shap_value": 0.004797378547378548
+    },
+    {
+      "rank": 42,
+      "feature": "feature_87",
+      "mean_shap_value": 0.004797378547378547
+    },
+    {
+      "rank": 43,
+      "feature": "feature_90",
+      "mean_shap_value": 0.004642857142857143
+    },
+    {
+      "rank": 44,
+      "feature": "feature_219",
+      "mean_shap_value": 0.004642857142857143
+    },
+    {
+      "rank": 45,
+      "feature": "feature_91",
+      "mean_shap_value": 0.004642857142857143
+    },
+    {
+      "rank": 46,
+      "feature": "feature_218",
+      "mean_shap_value": 0.004642857142857143
+    },
+    {
+      "rank": 47,
+      "feature": "feature_205",
+      "mean_shap_value": 0.004583333333333334
+    },
+    {
+      "rank": 48,
+      "feature": "feature_204",
+      "mean_shap_value": 0.004583333333333334
+    },
+    {
+      "rank": 49,
+      "feature": "feature_229",
+      "mean_shap_value": 0.004211309523809523
+    },
+    {
+      "rank": 50,
+      "feature": "feature_228",
+      "mean_shap_value": 0.004211309523809523
+    }
+  ],
+  "category_importance": {
+    "LBP Texture (20-119)": {
+      "shap_sum": 0.2554935064935065,
+      "percentage": 47.28505403519636
+    },
+    "Color Statistics (120-209)": {
+      "shap_sum": 0.1816364237614238,
+      "percentage": 33.61607200978721
+    },
+    "Edge Detection (210-217)": {
+      "shap_sum": 0.0439481922398589,
+      "percentage": 8.133641724721256
+    },
+    "Optical Flow (0-19)": {
+      "shap_sum": 0.036341269841269834,
+      "percentage": 6.725802670040736
+    },
+    "Facial Landmarks (218-239)": {
+      "shap_sum": 0.02290674603174603,
+      "percentage": 4.23942956025444
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "cv_results": {
+    "method": "5-fold GroupKFold Cross-Validation",
+    "n_folds": 5,
+    "mean_accuracy": 0.5463203463203463,
+    "std_accuracy": 0.06890600086951183,
+    "mean_precision": 0.45999999999999996,
+    "std_precision": 0.40792156108742283,
+    "mean_recall": 0.17272727272727276,
+    "std_recall": 0.15037144093189334,
+    "mean_auc": 0.6259504132231405,
+    "std_auc": 0.09717771327370671,
+    "95_ci_accuracy": [
+      0.45066348190389083,
+      0.6419772107368018
+    ],
+    "95_ci_auc": [
+      0.4910461200465917,
+      0.7608547063996893
+    ],
+    "per_fold": [
+      {
+        "accuracy": 0.6363636363636364,
+        "precision": 0.8,
+        "recall": 0.36363636363636365,
+        "auc": 0.7024793388429752
+      },
+      {
+        "accuracy": 0.6190476190476191,
+        "precision": 1.0,
+        "recall": 0.2,
+        "auc": 0.7454545454545454
+      },
+      {
+        "accuracy": 0.47619047619047616,
+        "precision": 0.0,
+        "recall": 0.0,
+        "auc": 0.4636363636363636
+      },
+      {
+        "accuracy": 0.5238095238095238,
+        "precision": 0.5,
+        "recall": 0.3,
+        "auc": 0.6181818181818182
+      },
+      {
+        "accuracy": 0.47619047619047616,
+        "precision": 0.0,
+        "recall": 0.0,
+        "auc": 0.6
+      }
+    ],
+    "statistical_tests": {
+      "accuracy_vs_random": {
+        "t_statistic": 1.344450286936946,
+        "p_value": 0.24998442915169977,
+        "significant_at_0.05": false
+      },
+      "auc_vs_0.5": {
+        "t_statistic": 2.592166639451451,
+        "p_value": 0.06054550914814842,
+        "significant_at_0.05": false
+      }
+    }
+  },
+  "model_config": {
+    "backbone": "MobileNetV2",
+    "lstm_units": 128,
+    "seq_length": 10,
+    "img_size": 128,
+    "batch_size": 4,
+    "epochs": 30,
+    "learning_rate": 0.001
+  },
+  "data_split_method": "GroupKFold (no augmentation on test, augmentation after split)",
+  "seed": 42
+}

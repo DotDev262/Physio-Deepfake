@@ -1,0 +1,12 @@
+{
+  "mean_accuracy": 0.6433333333333333,
+  "mean_auc": 0.7219753086419753,
+  "p_value": 0.0625,
+  "best_strategy": "Standard + Interactions + RF",
+  "all_strategies": {
+    "Standard + RF": 0.6633333333333333,
+    "Robust + RF": 0.6633333333333333,
+    "Standard + Interactions + RF": 0.6644444444444445,
+    "Outlier Removed + RF": 0.515686274509804
+  }
+}

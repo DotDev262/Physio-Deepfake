@@ -1,0 +1,5 @@
+{
+  "accuracy": 0.5,
+  "train_samples": 84,
+  "test_samples": 22
+}

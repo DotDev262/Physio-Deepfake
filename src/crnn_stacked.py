@@ -220,7 +220,7 @@ for fold, (train_idx, val_idx) in enumerate(gkf.split(X, y, groups), 1):
     model.fit(X_train, y_train, validation_data=(X_val, y_val), 
               epochs=EPOCHS, batch_size=BATCH_SIZE, callbacks=[early_stop], verbose=0)
     
-    y_pred_prob = model.predict(X_val).flatten()
+    y_pred_prob = model(X_val, training=False).numpy().flatten()
     y_pred = (y_pred_prob > 0.5).astype(int)
     
     acc = accuracy_score(y_val, y_pred)
@@ -228,6 +228,7 @@ for fold, (train_idx, val_idx) in enumerate(gkf.split(X, y, groups), 1):
     accuracies.append(acc)
     aucs.append(auc)
     print(f"   Acc: {acc*100:.2f}%, AUC: {auc:.4f}")
+    tf.keras.backend.clear_session()
 
 # Final Stats
 mean_acc = np.mean(accuracies)

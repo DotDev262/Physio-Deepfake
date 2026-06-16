@@ -1,0 +1,37 @@
+{
+  "Full Model (All Features)": {
+    "mean_accuracy": 0.73,
+    "std_accuracy": 0.08200609733428364,
+    "num_features": 47
+  },
+  "rPPG Only": {
+    "mean_accuracy": 0.6275000000000001,
+    "std_accuracy": 0.08097067370350822,
+    "num_features": 8
+  },
+  "Blink Only": {
+    "mean_accuracy": 0.7625,
+    "std_accuracy": 0.08605957239029256,
+    "num_features": 11
+  },
+  "Respiration Only": {
+    "mean_accuracy": 0.615,
+    "std_accuracy": 0.06999999999999999,
+    "num_features": 7
+  },
+  "Micro-movements Only": {
+    "mean_accuracy": 0.5725,
+    "std_accuracy": 0.06562202374203344,
+    "num_features": 11
+  },
+  "Color Consistency Only": {
+    "mean_accuracy": 0.605,
+    "std_accuracy": 0.04582575694955839,
+    "num_features": 10
+  },
+  "Combined Biological (rPPG+Blink+Respiration+Micro)": {
+    "mean_accuracy": 0.7424999999999999,
+    "std_accuracy": 0.07420411039827918,
+    "num_features": 37
+  }
+}

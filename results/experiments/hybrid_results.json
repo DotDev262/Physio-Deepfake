@@ -1,0 +1,9 @@
+{
+  "physio_only_accuracy": 0.45454545454545453,
+  "visual_only_accuracy": 0.5454545454545454,
+  "hybrid_accuracy": 0.5,
+  "improvement": -0.045454545454545414,
+  "num_samples": 106,
+  "train_samples": 84,
+  "test_samples": 22
+}

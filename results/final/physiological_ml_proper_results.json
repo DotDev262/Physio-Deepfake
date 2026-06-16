@@ -1,0 +1,71 @@
+{
+  "model_type": "ML on Physiological Features",
+  "features": "Heart rate, blink rate, breathing rate, EAR, RGB std",
+  "data_split": "GroupKFold (5-fold)",
+  "seed": 42,
+  "results": {
+    "Random Forest": {
+      "mean_accuracy": 0.6244444444444445,
+      "std_accuracy": 0.04951617767812706,
+      "mean_precision": 0.6324242424242424,
+      "std_precision": 0.07023246197035171,
+      "mean_recall": 0.6266666666666666,
+      "std_recall": 0.03265986323710903,
+      "mean_auc": 0.6930123456790124,
+      "std_auc": 0.04329723796530764,
+      "ci_accuracy": [
+        0.5557049698731744,
+        0.6931839190157145
+      ],
+      "ci_auc": [
+        0.6329061434703311,
+        0.7531185478876936
+      ],
+      "p_value_accuracy": 0.007352030151713386,
+      "p_value_auc": 0.0008749000335124048,
+      "significant": true
+    },
+    "SVM (RBF)": {
+      "mean_accuracy": 0.5511111111111111,
+      "std_accuracy": 0.07398698584260666,
+      "mean_precision": 0.545097125097125,
+      "std_precision": 0.06049362191651717,
+      "mean_recall": 0.5844444444444445,
+      "std_recall": 0.13799266396675577,
+      "mean_auc": 0.36990123456790125,
+      "std_auc": 0.11356710605678517,
+      "ci_accuracy": [
+        0.4484007087655893,
+        0.653821513456633
+      ],
+      "ci_auc": [
+        0.21224481670648132,
+        0.5275576524293212
+      ],
+      "p_value_accuracy": 0.23924136898455423,
+      "p_value_auc": 0.08375234295402963,
+      "significant": false
+    },
+    "SVM (Linear)": {
+      "mean_accuracy": 0.58,
+      "std_accuracy": 0.10265608411067642,
+      "mean_precision": 0.5866666666666667,
+      "std_precision": 0.08765462528203136,
+      "mean_recall": 0.6044444444444445,
+      "std_recall": 0.11517029795422169,
+      "mean_auc": 0.5052222222222222,
+      "std_auc": 0.12969057708909848,
+      "ci_accuracy": [
+        0.43749050887606966,
+        0.7225094911239303
+      ],
+      "ci_auc": [
+        0.32518283824757,
+        0.6852616061968745
+      ],
+      "p_value_accuracy": 0.19409433560031794,
+      "p_value_auc": 0.9396812993780466,
+      "significant": false
+    }
+  }
+}

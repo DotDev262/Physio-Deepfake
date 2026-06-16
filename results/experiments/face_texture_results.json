@@ -1,0 +1,80 @@
+{
+  "model": "Face Texture CRNN (MobileNetV2 + Texture Features)",
+  "architecture": {
+    "backbone": "MobileNetV2",
+    "temporal": "BiLSTM (64 + 32)",
+    "texture_features": "60 (laplacian, sobel, LBP, frequency, color, symmetry)",
+    "seq_length": 10,
+    "img_size": 128
+  },
+  "cv_results": {
+    "method": "5-fold GroupKFold",
+    "n_folds": 5,
+    "mean_accuracy": 0.6051948051948052,
+    "std_accuracy": 0.07827720902023,
+    "mean_auc": 0.7094214876033058,
+    "std_auc": 0.07139577535070078,
+    "95_ci_accuracy": [
+      0.4965286182784241,
+      0.7138609921111863
+    ],
+    "95_ci_auc": [
+      0.6103082621011786,
+      0.808534713105433
+    ],
+    "per_fold": [
+      {
+        "fold": 1,
+        "accuracy": 0.45454545454545453,
+        "auc": 0.6198347107438017,
+        "precision": 0.47368421052631576,
+        "recall": 0.8181818181818182
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.6666666666666666,
+        "auc": 0.7909090909090909,
+        "precision": 0.8,
+        "recall": 0.4
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.6666666666666666,
+        "auc": 0.7909090909090909,
+        "precision": 0.6428571428571429,
+        "recall": 0.8181818181818182
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.6190476190476191,
+        "auc": 0.6454545454545455,
+        "precision": 0.5833333333333334,
+        "recall": 0.7
+      },
+      {
+        "fold": 5,
+        "accuracy": 0.6190476190476191,
+        "auc": 0.7,
+        "precision": 0.7142857142857143,
+        "recall": 0.45454545454545453
+      }
+    ],
+    "statistical_tests": {
+      "accuracy_vs_random": {
+        "t_statistic": 2.6877505345807253,
+        "p_value": 0.05478580213363017
+      },
+      "auc_vs_0.5": {
+        "t_statistic": 5.86649522537191,
+        "p_value": 0.004215668304118682
+      }
+    }
+  },
+  "confusion_matrix": {
+    "tn": 30,
+    "fp": 23,
+    "fn": 19,
+    "tp": 34
+  },
+  "seed": 42
+}

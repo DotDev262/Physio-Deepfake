@@ -1,0 +1,236 @@
+{
+  "method": "SHAP TreeExplainer",
+  "n_features": 46,
+  "feature_importance": [
+    {
+      "rank": 1,
+      "feature": "EAR Min",
+      "shap_value": 0.04835734362586858
+    },
+    {
+      "rank": 2,
+      "feature": "Eye Mov Std",
+      "shap_value": 0.026801220205213326
+    },
+    {
+      "rank": 3,
+      "feature": "EAR Mean",
+      "shap_value": 0.026516029868603606
+    },
+    {
+      "rank": 4,
+      "feature": "Heart Rate (rPPG)",
+      "shap_value": 0.01909436784743414
+    },
+    {
+      "rank": 5,
+      "feature": "Eye Mov Max",
+      "shap_value": 0.01858386080810159
+    },
+    {
+      "rank": 6,
+      "feature": "Blink Variability",
+      "shap_value": 0.018283670920701132
+    },
+    {
+      "rank": 7,
+      "feature": "Blink Valid",
+      "shap_value": 0.017766141347154166
+    },
+    {
+      "rank": 8,
+      "feature": "Eye Mov Mean",
+      "shap_value": 0.01685750821365817
+    },
+    {
+      "rank": 9,
+      "feature": "EAR Max",
+      "shap_value": 0.012492688174580846
+    },
+    {
+      "rank": 10,
+      "feature": "EAR Std",
+      "shap_value": 0.01244013051571946
+    },
+    {
+      "rank": 11,
+      "feature": "Eye Mov Count",
+      "shap_value": 0.012067281139696111
+    },
+    {
+      "rank": 12,
+      "feature": "Blink Rate",
+      "shap_value": 0.010921147769823624
+    },
+    {
+      "rank": 13,
+      "feature": "Eye Openness Var",
+      "shap_value": 0.010710589995089757
+    },
+    {
+      "rank": 14,
+      "feature": "Color Skewness",
+      "shap_value": 0.008856917315911482
+    },
+    {
+      "rank": 15,
+      "feature": "Skin Consistency",
+      "shap_value": 0.008588713120089644
+    },
+    {
+      "rank": 16,
+      "feature": "G/R Ratio",
+      "shap_value": 0.008210642109826012
+    },
+    {
+      "rank": 17,
+      "feature": "Breathing Max",
+      "shap_value": 0.007761070706918623
+    },
+    {
+      "rank": 18,
+      "feature": "Breathing Count",
+      "shap_value": 0.006790002463399276
+    },
+    {
+      "rank": 19,
+      "feature": "Frame Coherence",
+      "shap_value": 0.0064348416000286224
+    },
+    {
+      "rank": 20,
+      "feature": "Peak Interval Mean",
+      "shap_value": 0.00627507131339872
+    },
+    {
+      "rank": 21,
+      "feature": "B Std",
+      "shap_value": 0.00600107317580955
+    },
+    {
+      "rank": 22,
+      "feature": "Head Stability Ratio",
+      "shap_value": 0.005808607939077758
+    },
+    {
+      "rank": 23,
+      "feature": "Micro Mov Std",
+      "shap_value": 0.005798582457504339
+    },
+    {
+      "rank": 24,
+      "feature": "Breathing Rate",
+      "shap_value": 0.005674225352341804
+    },
+    {
+      "rank": 25,
+      "feature": "Micro Mov Max",
+      "shap_value": 0.0053837588772860144
+    },
+    {
+      "rank": 26,
+      "feature": "Landmark Stability",
+      "shap_value": 0.005348999357145438
+    },
+    {
+      "rank": 27,
+      "feature": "Micro Mov Mean",
+      "shap_value": 0.005221149871378794
+    },
+    {
+      "rank": 28,
+      "feature": "G Std",
+      "shap_value": 0.005151068218516486
+    },
+    {
+      "rank": 29,
+      "feature": "Micro Mov Count",
+      "shap_value": 0.0048951792594980476
+    },
+    {
+      "rank": 30,
+      "feature": "Breathing Mean",
+      "shap_value": 0.004830803386938727
+    },
+    {
+      "rank": 31,
+      "feature": "R Std",
+      "shap_value": 0.004764987432542207
+    },
+    {
+      "rank": 32,
+      "feature": "SNR",
+      "shap_value": 0.004720842454564544
+    },
+    {
+      "rank": 33,
+      "feature": "Color Drift",
+      "shap_value": 0.004325559806192173
+    },
+    {
+      "rank": 34,
+      "feature": "Green Spread",
+      "shap_value": 0.004302415397058044
+    },
+    {
+      "rank": 35,
+      "feature": "Breathing Std",
+      "shap_value": 0.004141007753957943
+    },
+    {
+      "rank": 36,
+      "feature": "Brightness Var",
+      "shap_value": 0.004076509749477458
+    },
+    {
+      "rank": 37,
+      "feature": "Color Quality",
+      "shap_value": 0.003668268912882635
+    },
+    {
+      "rank": 38,
+      "feature": "Peak Interval Std",
+      "shap_value": 0.0016005837363135442
+    },
+    {
+      "rank": 39,
+      "feature": "HRV Index",
+      "shap_value": 0.001363560709101983
+    },
+    {
+      "rank": 40,
+      "feature": "SDNN",
+      "shap_value": 0.0003651586928910703
+    },
+    {
+      "rank": 41,
+      "feature": "HR Valid",
+      "shap_value": 0.00016419453302236203
+    },
+    {
+      "rank": 42,
+      "feature": "Motion Smoothness",
+      "shap_value": 0.0
+    },
+    {
+      "rank": 43,
+      "feature": "Detection Quality",
+      "shap_value": 0.0
+    },
+    {
+      "rank": 44,
+      "feature": "Breathing Valid",
+      "shap_value": 0.0
+    },
+    {
+      "rank": 45,
+      "feature": "pNN50",
+      "shap_value": 0.0
+    },
+    {
+      "rank": 46,
+      "feature": "RMSSD",
+      "shap_value": 0.0
+    }
+  ]
+}

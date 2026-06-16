@@ -1,0 +1,14 @@
+{
+  "Random Forest": {
+    "accuracy": 0.2727272727272727
+  },
+  "SVM (RBF)": {
+    "accuracy": 0.3181818181818182
+  },
+  "SVM (Linear)": {
+    "accuracy": 0.45454545454545453
+  },
+  "Ensemble": {
+    "accuracy": 0.45454545454545453
+  }
+}

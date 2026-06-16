@@ -1,0 +1,71 @@
+{
+  "model_type": "Traditional ML (Visual Features)",
+  "features": "Facial landmarks + color histograms",
+  "data_split": "GroupKFold (5-fold)",
+  "seed": 42,
+  "results": {
+    "Random Forest": {
+      "mean_accuracy": 0.5135672514619883,
+      "std_accuracy": 0.0923666762764483,
+      "mean_precision": 0.514891774891775,
+      "std_precision": 0.0820967337384566,
+      "mean_recall": 0.6844444444444445,
+      "std_recall": 0.1266081736288366,
+      "mean_auc": 0.5045925925925927,
+      "std_auc": 0.12842104200587026,
+      "ci_accuracy": [
+        0.3853417483464213,
+        0.6417927545775554
+      ],
+      "ci_auc": [
+        0.3263156058517933,
+        0.6828695793333921
+      ],
+      "p_value_accuracy": 0.7835465574615164,
+      "p_value_auc": 0.9464141025676343,
+      "significant": false
+    },
+    "SVM (RBF)": {
+      "mean_accuracy": 0.5052631578947369,
+      "std_accuracy": 0.010526315789473672,
+      "mean_precision": 0.5066666666666666,
+      "std_precision": 0.01333333333333333,
+      "mean_recall": 0.96,
+      "std_recall": 0.07999999999999999,
+      "mean_auc": 0.4770864197530864,
+      "std_auc": 0.035276563171037334,
+      "ci_accuracy": [
+        0.49065028892001167,
+        0.5198760268694621
+      ],
+      "ci_auc": [
+        0.42811469918087275,
+        0.5260581403253001
+      ],
+      "p_value_accuracy": 0.3739009663000572,
+      "p_value_auc": 0.26373691927747744,
+      "significant": false
+    },
+    "SVM (Linear)": {
+      "mean_accuracy": 0.46309941520467834,
+      "std_accuracy": 0.054792044938133555,
+      "mean_precision": 0.46571428571428564,
+      "std_precision": 0.047847073093639884,
+      "mean_recall": 0.5311111111111111,
+      "std_recall": 0.2191340984110409,
+      "mean_auc": 0.4718765432098766,
+      "std_auc": 0.02605124327800555,
+      "ci_accuracy": [
+        0.3870358627185491,
+        0.5391629676908075
+      ],
+      "ci_auc": [
+        0.4357116197681089,
+        0.5080414666516443
+      ],
+      "p_value_accuracy": 0.24925262965919567,
+      "p_value_auc": 0.0969882247304762,
+      "significant": false
+    }
+  }
+}

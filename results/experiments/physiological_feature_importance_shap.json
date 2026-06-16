@@ -1,0 +1,98 @@
+{
+  "method": "SHAP TreeExplainer",
+  "feature_importance": [
+    {
+      "rank": 1,
+      "feature": "EAR Min",
+      "shap_value": 0.08545296691899364,
+      "contribution_percent": 23.789703779911235
+    },
+    {
+      "rank": 2,
+      "feature": "EAR Mean",
+      "shap_value": 0.05099784721883607,
+      "contribution_percent": 14.197560628870534
+    },
+    {
+      "rank": 3,
+      "feature": "Heart Rate (rPPG)",
+      "shap_value": 0.032715264852632264,
+      "contribution_percent": 9.107775750644805
+    },
+    {
+      "rank": 4,
+      "feature": "Blink Rate",
+      "shap_value": 0.02890622298555716,
+      "contribution_percent": 8.047356423263258
+    },
+    {
+      "rank": 5,
+      "feature": "EAR Std",
+      "shap_value": 0.026901316384781288,
+      "contribution_percent": 7.489199862308962
+    },
+    {
+      "rank": 6,
+      "feature": "EAR Max",
+      "shap_value": 0.026571760632389706,
+      "contribution_percent": 7.397453091997363
+    },
+    {
+      "rank": 7,
+      "feature": "B Channel Std",
+      "shap_value": 0.023705734640706713,
+      "contribution_percent": 6.599564945734417
+    },
+    {
+      "rank": 8,
+      "feature": "G/R Ratio",
+      "shap_value": 0.02321540973715933,
+      "contribution_percent": 6.463060800449871
+    },
+    {
+      "rank": 9,
+      "feature": "G Channel Std",
+      "shap_value": 0.02033738053354001,
+      "contribution_percent": 5.661831016480613
+    },
+    {
+      "rank": 10,
+      "feature": "Breathing Rate",
+      "shap_value": 0.018987420785415824,
+      "contribution_percent": 5.286008576598309
+    },
+    {
+      "rank": 11,
+      "feature": "R Channel Std",
+      "shap_value": 0.015544243817596939,
+      "contribution_percent": 4.327444315115452
+    },
+    {
+      "rank": 12,
+      "feature": "Heart Rate Valid",
+      "shap_value": 0.0032458230551618773,
+      "contribution_percent": 0.9036218611052634
+    },
+    {
+      "rank": 13,
+      "feature": "Breathing Rate Valid",
+      "shap_value": 0.0026199836197524184,
+      "contribution_percent": 0.729391107990609
+    },
+    {
+      "rank": 14,
+      "feature": "Blink Rate Valid",
+      "shap_value": 0.0,
+      "contribution_percent": 0.0
+    }
+  ],
+  "top_3_features": [
+    "EAR Min",
+    "EAR Mean",
+    "Heart Rate (rPPG)"
+  ],
+  "model": "Random Forest (200 trees)",
+  "dataset": "SDFVD",
+  "n_samples": 96,
+  "n_features": 14
+}

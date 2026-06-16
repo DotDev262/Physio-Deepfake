@@ -1,0 +1,191 @@
+{
+  "mean_accuracy": 0.5733333333333334,
+  "mean_auc": 0.6883703703703704,
+  "p_value": 0.059936110353090925,
+  "feature_importance": [
+    {
+      "feature": "B Std",
+      "importance": 0.10483711957931519
+    },
+    {
+      "feature": "EAR Min",
+      "importance": 0.07776300609111786
+    },
+    {
+      "feature": "Micro Mov Mean",
+      "importance": 0.07157253473997116
+    },
+    {
+      "feature": "EAR Max",
+      "importance": 0.05790536478161812
+    },
+    {
+      "feature": "Eye Mov Max",
+      "importance": 0.05719011649489403
+    },
+    {
+      "feature": "Landmark Stability",
+      "importance": 0.05371589958667755
+    },
+    {
+      "feature": "Blink Valid",
+      "importance": 0.052781958132982254
+    },
+    {
+      "feature": "Frame Coherence",
+      "importance": 0.0406588651239872
+    },
+    {
+      "feature": "Eye Mov Std",
+      "importance": 0.03930533677339554
+    },
+    {
+      "feature": "G/R Ratio",
+      "importance": 0.03731340169906616
+    },
+    {
+      "feature": "Color Drift",
+      "importance": 0.03532342240214348
+    },
+    {
+      "feature": "Peak Interval Mean",
+      "importance": 0.03470543399453163
+    },
+    {
+      "feature": "Eye Mov Mean",
+      "importance": 0.031832482665777206
+    },
+    {
+      "feature": "Micro Mov Max",
+      "importance": 0.028082232922315598
+    },
+    {
+      "feature": "Heart Rate (rPPG)",
+      "importance": 0.026547595858573914
+    },
+    {
+      "feature": "EAR Std",
+      "importance": 0.024861687794327736
+    },
+    {
+      "feature": "Color Skewness",
+      "importance": 0.02250199392437935
+    },
+    {
+      "feature": "EAR Mean",
+      "importance": 0.02157571166753769
+    },
+    {
+      "feature": "Blink Variability",
+      "importance": 0.020687133073806763
+    },
+    {
+      "feature": "Blink Rate",
+      "importance": 0.020264100283384323
+    },
+    {
+      "feature": "Breathing Count",
+      "importance": 0.020163435488939285
+    },
+    {
+      "feature": "Head Stability Ratio",
+      "importance": 0.019741345196962357
+    },
+    {
+      "feature": "Breathing Rate",
+      "importance": 0.019320465624332428
+    },
+    {
+      "feature": "Breathing Std",
+      "importance": 0.01692262478172779
+    },
+    {
+      "feature": "R Std",
+      "importance": 0.011013785377144814
+    },
+    {
+      "feature": "G Std",
+      "importance": 0.010437723249197006
+    },
+    {
+      "feature": "Skin Consistency",
+      "importance": 0.010226279497146606
+    },
+    {
+      "feature": "Color Quality",
+      "importance": 0.008955013938248158
+    },
+    {
+      "feature": "Micro Mov Count",
+      "importance": 0.007362679112702608
+    },
+    {
+      "feature": "Micro Mov Std",
+      "importance": 0.006551747210323811
+    },
+    {
+      "feature": "Breathing Mean",
+      "importance": 0.005682677961885929
+    },
+    {
+      "feature": "Breathing Max",
+      "importance": 0.00419680355116725
+    },
+    {
+      "feature": "HRV Index",
+      "importance": 0.0
+    },
+    {
+      "feature": "HR Valid",
+      "importance": 0.0
+    },
+    {
+      "feature": "RMSSD",
+      "importance": 0.0
+    },
+    {
+      "feature": "SDNN",
+      "importance": 0.0
+    },
+    {
+      "feature": "pNN50",
+      "importance": 0.0
+    },
+    {
+      "feature": "Peak Interval Std",
+      "importance": 0.0
+    },
+    {
+      "feature": "Eye Openness Var",
+      "importance": 0.0
+    },
+    {
+      "feature": "Eye Mov Count",
+      "importance": 0.0
+    },
+    {
+      "feature": "SNR",
+      "importance": 0.0
+    },
+    {
+      "feature": "Breathing Valid",
+      "importance": 0.0
+    },
+    {
+      "feature": "Motion Smoothness",
+      "importance": 0.0
+    },
+    {
+      "feature": "Green Spread",
+      "importance": 0.0
+    },
+    {
+      "feature": "Brightness Var",
+      "importance": 0.0
+    },
+    {
+      "feature": "Detection Quality",
+      "importance": 0.0
+    }
+  ]
+}

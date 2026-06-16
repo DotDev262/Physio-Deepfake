@@ -1,0 +1,15 @@
+{
+  "best_features": [
+    "Heart Rate (BPM)",
+    "Blink Rate",
+    "Micro-Movements"
+  ],
+  "worst_features": [
+    "Breathing Rate"
+  ],
+  "expected_accuracy_with_good_data": "75-85%",
+  "our_accuracy": "47%",
+  "reason_for_low_performance": "Insufficient dataset size (106 videos)",
+  "minimum_dataset_size": 1000,
+  "recommended_approach": "Use visual features (CRNN) for small datasets"
+}

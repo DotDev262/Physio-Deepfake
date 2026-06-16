@@ -296,98 +296,181 @@ def find_optimal_threshold(y_true, y_proba):
     return best_thresh, best_acc
 
 
-print("\n📂 Loading data...")
-X, y, video_ids = [], [], []
-extractor = EnhancedPhysioFeatureExtractor()
+def main():
+    print("\n📂 Loading data...")
+    X, y, video_ids = [], [], []
+    extractor = EnhancedPhysioFeatureExtractor()
 
-for folder, label in [(REAL_FOLDER, 0), (FAKE_FOLDER, 1)]:
-    videos = glob.glob(os.path.join(DATASET_PATH, folder, "*.mp4"))
-    print(f"   Processing {len(videos)} {'real' if label == 0 else 'fake'} videos...")
-    for video_path in videos:
-        features = extractor.extract_features_from_video(video_path)
-        if features is not None and len(features) >= 45:
-            X.append(features)
-            y.append(label)
-            video_ids.append(extract_video_id(video_path))
+    for folder, label in [(REAL_FOLDER, 0), (FAKE_FOLDER, 1)]:
+        videos = glob.glob(os.path.join(DATASET_PATH, folder, "*.mp4"))
+        print(f"   Processing {len(videos)} {'real' if label == 0 else 'fake'} videos...")
+        for video_path in videos:
+            features = extractor.extract_features_from_video(video_path)
+            if features is not None and len(features) >= 45:
+                X.append(features)
+                y.append(label)
+                video_ids.append(extract_video_id(video_path))
 
-X = np.nan_to_num(np.array(X), nan=0.0, posinf=0.0, neginf=0.0)
-y = np.array(y)
-groups = np.array(video_ids)
+    X = np.nan_to_num(np.array(X), nan=0.0, posinf=0.0, neginf=0.0)
+    y = np.array(y)
+    groups = np.array(video_ids)
 
-if len(X) == 0:
-    print("❌ No features extracted. Check dataset path or video availability.")
-    exit(1)
+    if len(X) == 0:
+        print("❌ No features extracted. Check dataset path or video availability.")
+        exit(1)
 
-print(f"\n✅ Data: {len(X)} samples, {X.shape[1]} features")
+    print(f"\n✅ Data: {len(X)} samples, {X.shape[1]} features")
 
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
 
-print("\n" + "=" * 70)
-print("TESTING MODELS WITH THRESHOLD OPTIMIZATION")
-print("=" * 70)
+    print("\n" + "=" * 70)
+    print("TESTING MODELS WITH THRESHOLD OPTIMIZATION")
+    print("=" * 70)
 
-models = [
-    (
-        "RF_default",
-        RandomForestClassifier(
-            n_estimators=200, max_depth=15, random_state=SEED, class_weight="balanced"
+    models = [
+        (
+            "RF_default",
+            RandomForestClassifier(
+                n_estimators=200, max_depth=15, random_state=SEED, class_weight="balanced"
+            ),
+            0.5,
         ),
-        0.5,
-    ),
-    (
-        "RF_tuned",
-        RandomForestClassifier(
+        (
+            "RF_tuned",
+            RandomForestClassifier(
+                n_estimators=300,
+                max_depth=10,
+                min_samples_split=3,
+                random_state=SEED,
+                class_weight="balanced",
+            ),
+            0.5,
+        ),
+        (
+            "ExtraTrees",
+            ExtraTreesClassifier(
+                n_estimators=300, max_depth=15, random_state=SEED, class_weight="balanced"
+            ),
+            0.5,
+        ),
+        (
+            "MLP_small",
+            MLPClassifier(
+                hidden_layer_sizes=(64, 32),
+                max_iter=500,
+                random_state=SEED,
+                early_stopping=True,
+            ),
+            0.5,
+        ),
+        (
+            "MLP_large",
+            MLPClassifier(
+                hidden_layer_sizes=(128, 64, 32),
+                max_iter=500,
+                random_state=SEED,
+                early_stopping=True,
+            ),
+            0.5,
+        ),
+    ]
+
+    best_acc = 0
+    best_name = ""
+    best_results = {}
+
+    for name, model, default_thresh in models:
+        print(f"\n--- {name} ---")
+
+        gkf = GroupKFold(n_splits=min(N_FOLDS, len(np.unique(groups))))
+        fold_accs = []
+        fold_aucs = []
+        fold_thresholds = []
+        all_y_true_fold = []
+        all_y_proba_fold = []
+
+        for fold, (train_idx, val_idx) in enumerate(gkf.split(X_scaled, y, groups), 1):
+            X_train, X_val = X_scaled[train_idx], X_scaled[val_idx]
+            y_train, y_val = y[train_idx], y[val_idx]
+
+            model.fit(X_train, y_train)
+            prob = model.predict_proba(X_val)[:, 1]
+
+            thresh, _ = find_optimal_threshold(y_val, prob)
+            y_pred = (prob >= thresh).astype(int)
+
+            acc = accuracy_score(y_val, y_pred)
+            auc = roc_auc_score(y_val, prob) if len(np.unique(y_val)) > 1 else 0.5
+
+            fold_accs.append(acc)
+            fold_aucs.append(auc)
+            fold_thresholds.append(thresh)
+            all_y_true_fold.extend(y_val)
+            all_y_proba_fold.extend(prob)
+
+            print(
+                f"   Fold {fold}: Acc={acc * 100:.2f}%, AUC={auc:.4f}, thresh={thresh:.2f}"
+            )
+
+        mean_acc = np.mean(fold_accs)
+        mean_auc = np.mean(fold_aucs)
+
+        print(f"   Mean: Acc={mean_acc * 100:.2f}%, AUC={mean_auc:.4f}")
+
+        best_results[name] = {
+            "accuracy": mean_acc,
+            "auc": mean_auc,
+            "thresholds": fold_thresholds,
+        }
+
+        if mean_acc > best_acc:
+            best_acc = mean_acc
+            best_name = name
+
+    print(f"\n✅ Best: {best_name} with {best_acc * 100:.2f}%")
+
+    # Final evaluation with best model and optimized threshold
+    print("\n" + "=" * 70)
+    print(f"FINAL EVALUATION ({best_name})")
+    print("=" * 70)
+
+    best_model_info = {
+        "RF_tuned": RandomForestClassifier(
             n_estimators=300,
             max_depth=10,
             min_samples_split=3,
             random_state=SEED,
             class_weight="balanced",
         ),
-        0.5,
-    ),
-    (
-        "ExtraTrees",
-        ExtraTreesClassifier(
+        "ExtraTrees": ExtraTreesClassifier(
             n_estimators=300, max_depth=15, random_state=SEED, class_weight="balanced"
         ),
-        0.5,
-    ),
-    (
-        "MLP_small",
-        MLPClassifier(
+        "MLP_small": MLPClassifier(
             hidden_layer_sizes=(64, 32),
             max_iter=500,
             random_state=SEED,
             early_stopping=True,
         ),
-        0.5,
-    ),
-    (
-        "MLP_large",
-        MLPClassifier(
+        "MLP_large": MLPClassifier(
             hidden_layer_sizes=(128, 64, 32),
             max_iter=500,
             random_state=SEED,
             early_stopping=True,
         ),
-        0.5,
-    ),
-]
+    }
 
-best_acc = 0
-best_name = ""
-best_results = {}
-
-for name, model, default_thresh in models:
-    print(f"\n--- {name} ---")
+    model = best_model_info.get(
+        best_name,
+        RandomForestClassifier(
+            n_estimators=200, max_depth=15, random_state=SEED, class_weight="balanced"
+        ),
+    )
 
     gkf = GroupKFold(n_splits=min(N_FOLDS, len(np.unique(groups))))
     fold_accs = []
     fold_aucs = []
-    fold_thresholds = []
-    all_y_true_fold = []
-    all_y_proba_fold = []
+    all_y_true, all_y_proba = [], []
 
     for fold, (train_idx, val_idx) in enumerate(gkf.split(X_scaled, y, groups), 1):
         X_train, X_val = X_scaled[train_idx], X_scaled[val_idx]
@@ -396,7 +479,7 @@ for name, model, default_thresh in models:
         model.fit(X_train, y_train)
         prob = model.predict_proba(X_val)[:, 1]
 
-        thresh, _ = find_optimal_threshold(y_val, prob)
+        thresh = best_results[best_name]["thresholds"][fold - 1]
         y_pred = (prob >= thresh).astype(int)
 
         acc = accuracy_score(y_val, y_pred)
@@ -404,130 +487,52 @@ for name, model, default_thresh in models:
 
         fold_accs.append(acc)
         fold_aucs.append(auc)
-        fold_thresholds.append(thresh)
-        all_y_true_fold.extend(y_val)
-        all_y_proba_fold.extend(prob)
+        all_y_true.extend(y_val)
+        all_y_proba.extend(prob)
 
-        print(
-            f"   Fold {fold}: Acc={acc * 100:.2f}%, AUC={auc:.4f}, thresh={thresh:.2f}"
-        )
+        print(f"   Fold {fold}: Acc={acc * 100:.2f}%, AUC={auc:.4f}, thresh={thresh:.2f}")
 
     mean_acc = np.mean(fold_accs)
     mean_auc = np.mean(fold_aucs)
 
-    print(f"   Mean: Acc={mean_acc * 100:.2f}%, AUC={mean_auc:.4f}")
+    all_y_true = np.array(all_y_true)
+    all_y_proba = np.array(all_y_proba)
 
-    best_results[name] = {
-        "accuracy": mean_acc,
-        "auc": mean_auc,
-        "thresholds": fold_thresholds,
+    # Use average threshold from folds
+    avg_thresh = np.mean(best_results[best_name]["thresholds"])
+    all_y_pred = (all_y_proba >= avg_thresh).astype(int)
+
+    stat, p_value = wilcoxon(fold_accs)
+
+    print("\n" + "=" * 70)
+    print("FINAL RESULTS")
+    print("=" * 70)
+
+    print(f"\n📊 Accuracy: {mean_acc * 100:.2f}% ± {np.std(fold_accs) * 100:.2f}%")
+    print(f"📊 AUC: {mean_auc:.4f} ± {np.std(fold_aucs):.4f}")
+    print(
+        f"📊 p-value: {p_value:.4f} {'(significant)' if p_value < 0.05 else '(not significant)'}"
+    )
+    print(f"📊 Optimized threshold: {avg_thresh:.2f}")
+
+    cm = confusion_matrix(all_y_true, all_y_pred)
+    tn, fp, fn, tp = cm.ravel()
+    print(f"📊 Confusion Matrix: TN={tn}, FP={fp}, FN={fn}, TP={tp}")
+
+    results = {
+        "mean_accuracy": mean_acc,
+        "mean_auc": mean_auc,
+        "p_value": p_value,
+        "best_model": best_name,
+        "optimized_threshold": avg_thresh,
+        "all_models": best_results,
     }
 
-    if mean_acc > best_acc:
-        best_acc = mean_acc
-        best_name = name
+    with open("results/physiological_final_results.json", "w") as f:
+        json.dump(results, f, indent=2)
 
-print(f"\n✅ Best: {best_name} with {best_acc * 100:.2f}%")
+    print("\n✅ Saved to results/physiological_final_results.json")
 
-# Final evaluation with best model and optimized threshold
-print("\n" + "=" * 70)
-print(f"FINAL EVALUATION ({best_name})")
-print("=" * 70)
 
-best_model_info = {
-    "RF_tuned": RandomForestClassifier(
-        n_estimators=300,
-        max_depth=10,
-        min_samples_split=3,
-        random_state=SEED,
-        class_weight="balanced",
-    ),
-    "ExtraTrees": ExtraTreesClassifier(
-        n_estimators=300, max_depth=15, random_state=SEED, class_weight="balanced"
-    ),
-    "MLP_small": MLPClassifier(
-        hidden_layer_sizes=(64, 32),
-        max_iter=500,
-        random_state=SEED,
-        early_stopping=True,
-    ),
-    "MLP_large": MLPClassifier(
-        hidden_layer_sizes=(128, 64, 32),
-        max_iter=500,
-        random_state=SEED,
-        early_stopping=True,
-    ),
-}
-
-model = best_model_info.get(
-    best_name,
-    RandomForestClassifier(
-        n_estimators=200, max_depth=15, random_state=SEED, class_weight="balanced"
-    ),
-)
-
-gkf = GroupKFold(n_splits=min(N_FOLDS, len(np.unique(groups))))
-fold_accs = []
-fold_aucs = []
-all_y_true, all_y_proba = [], []
-
-for fold, (train_idx, val_idx) in enumerate(gkf.split(X_scaled, y, groups), 1):
-    X_train, X_val = X_scaled[train_idx], X_scaled[val_idx]
-    y_train, y_val = y[train_idx], y[val_idx]
-
-    model.fit(X_train, y_train)
-    prob = model.predict_proba(X_val)[:, 1]
-
-    thresh = best_results[best_name]["thresholds"][fold - 1]
-    y_pred = (prob >= thresh).astype(int)
-
-    acc = accuracy_score(y_val, y_pred)
-    auc = roc_auc_score(y_val, prob) if len(np.unique(y_val)) > 1 else 0.5
-
-    fold_accs.append(acc)
-    fold_aucs.append(auc)
-    all_y_true.extend(y_val)
-    all_y_proba.extend(prob)
-
-    print(f"   Fold {fold}: Acc={acc * 100:.2f}%, AUC={auc:.4f}, thresh={thresh:.2f}")
-
-mean_acc = np.mean(fold_accs)
-mean_auc = np.mean(fold_aucs)
-
-all_y_true = np.array(all_y_true)
-all_y_proba = np.array(all_y_proba)
-
-# Use average threshold from folds
-avg_thresh = np.mean(best_results[best_name]["thresholds"])
-all_y_pred = (all_y_proba >= avg_thresh).astype(int)
-
-stat, p_value = wilcoxon(fold_accs)
-
-print("\n" + "=" * 70)
-print("FINAL RESULTS")
-print("=" * 70)
-
-print(f"\n📊 Accuracy: {mean_acc * 100:.2f}% ± {np.std(fold_accs) * 100:.2f}%")
-print(f"📊 AUC: {mean_auc:.4f} ± {np.std(fold_aucs):.4f}")
-print(
-    f"📊 p-value: {p_value:.4f} {'(significant)' if p_value < 0.05 else '(not significant)'}"
-)
-print(f"📊 Optimized threshold: {avg_thresh:.2f}")
-
-cm = confusion_matrix(all_y_true, all_y_pred)
-tn, fp, fn, tp = cm.ravel()
-print(f"📊 Confusion Matrix: TN={tn}, FP={fp}, FN={fn}, TP={tp}")
-
-results = {
-    "mean_accuracy": mean_acc,
-    "mean_auc": mean_auc,
-    "p_value": p_value,
-    "best_model": best_name,
-    "optimized_threshold": avg_thresh,
-    "all_models": best_results,
-}
-
-with open("results/physiological_final_results.json", "w") as f:
-    json.dump(results, f, indent=2)
-
-print("\n✅ Saved to results/physiological_final_results.json")
+if __name__ == "__main__":
+    main()

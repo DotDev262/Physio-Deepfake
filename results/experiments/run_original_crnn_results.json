@@ -1,0 +1,17 @@
+{
+  "test_accuracy": 50.0,
+  "train_samples": 84,
+  "test_samples": 22,
+  "model_config": {
+    "backbone": "MobileNetV2",
+    "lstm_units": 128,
+    "seq_length": 10,
+    "img_size": 224,
+    "batch_size": 8,
+    "epochs": 30,
+    "learning_rate": 0.001
+  },
+  "paper_comparison": {
+    "Baseline CRNN (this run)": 50.0
+  }
+}

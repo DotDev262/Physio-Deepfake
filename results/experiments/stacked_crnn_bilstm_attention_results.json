@@ -1,0 +1,97 @@
+{
+  "model": "Stacked CRNN (BiLSTM + Attention)",
+  "architecture": {
+    "backbone": "MobileNetV2",
+    "lstm_layers": "3 (stacked Bidirectional)",
+    "lstm_units": [
+      128,
+      128,
+      64
+    ],
+    "attention": "Multi-head Self-Attention + Temporal Attention",
+    "seq_length": 20,
+    "img_size": 128
+  },
+  "cv_results": {
+    "method": "5-fold GroupKFold Cross-Validation",
+    "n_folds": 5,
+    "mean_accuracy": 0.6229437229437229,
+    "std_accuracy": 0.08334204710724763,
+    "mean_precision": 0.615934065934066,
+    "std_precision": 0.33302505569232255,
+    "mean_recall": 0.4327272727272728,
+    "std_recall": 0.3571049802819176,
+    "mean_auc": 0.7697520661157025,
+    "std_auc": 0.059342295992904144,
+    "95_ci_accuracy": [
+      0.5072464135696821,
+      0.7386410323177637
+    ],
+    "95_ci_auc": [
+      0.6873717524953538,
+      0.8521323797360512
+    ],
+    "per_fold": [
+      {
+        "fold": 1,
+        "accuracy": 0.5909090909090909,
+        "precision": 1.0,
+        "recall": 0.18181818181818182,
+        "auc": 0.6942148760330579
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.6666666666666666,
+        "precision": 0.6153846153846154,
+        "recall": 0.8,
+        "auc": 0.7818181818181819
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.7619047619047619,
+        "precision": 0.7142857142857143,
+        "recall": 0.9090909090909091,
+        "auc": 0.8181818181818182
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.5238095238095238,
+        "precision": 0.0,
+        "recall": 0.0,
+        "auc": 0.8454545454545455
+      },
+      {
+        "fold": 5,
+        "accuracy": 0.5714285714285714,
+        "precision": 0.75,
+        "recall": 0.2727272727272727,
+        "auc": 0.7090909090909091
+      }
+    ],
+    "statistical_tests": {
+      "accuracy_vs_random": {
+        "t_statistic": 2.9503408474119763,
+        "p_value": 0.041955138714105895,
+        "significant_at_0.05": true
+      },
+      "auc_vs_0.5": {
+        "t_statistic": 9.091392963560361,
+        "p_value": 0.000811685241630168,
+        "significant_at_0.05": true
+      }
+    }
+  },
+  "model_config": {
+    "batch_size": 4,
+    "epochs": 30,
+    "learning_rate": 0.001,
+    "seed": 42
+  },
+  "data_split_method": "GroupKFold (no augmentation on test, augmentation after split)",
+  "confusion_matrix": {
+    "tn": 43,
+    "fp": 10,
+    "fn": 30,
+    "tp": 23
+  }
+}

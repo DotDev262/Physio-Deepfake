@@ -1,0 +1,71 @@
+{
+  "model_type": "ML on Physiological Features",
+  "features": "Heart rate, blink rate, breathing rate, EAR, RGB std",
+  "data_split": "GroupKFold (5-fold)",
+  "seed": 42,
+  "results": {
+    "Random Forest": {
+      "mean_accuracy": 0.4363157894736842,
+      "std_accuracy": 0.07656764250070879,
+      "mean_precision": 0.43319735819735816,
+      "std_precision": 0.06254471362194403,
+      "mean_recall": 0.45555555555555555,
+      "std_recall": 0.12726952056245647,
+      "mean_auc": 0.378,
+      "std_auc": 0.0945434774894729,
+      "ci_accuracy": [
+        0.3300228613548705,
+        0.542608717592498
+      ],
+      "ci_auc": [
+        0.24675261234798762,
+        0.5092473876520124
+      ],
+      "p_value_accuracy": 0.17155031071264748,
+      "p_value_auc": 0.0612741607701764,
+      "significant": false
+    },
+    "SVM (RBF)": {
+      "mean_accuracy": 0.47789473684210526,
+      "std_accuracy": 0.08060711460663851,
+      "mean_precision": 0.4382142857142857,
+      "std_precision": 0.12965581342331364,
+      "mean_recall": 0.49333333333333335,
+      "std_recall": 0.26985135368646895,
+      "mean_auc": 0.4724444444444445,
+      "std_auc": 0.07710951006983431,
+      "ci_accuracy": [
+        0.36599412244524576,
+        0.5897953512389648
+      ],
+      "ci_auc": [
+        0.36539928354564877,
+        0.5794896053432402
+      ],
+      "p_value_accuracy": 0.6125438114094497,
+      "p_value_auc": 0.5142820381357102,
+      "significant": false
+    },
+    "SVM (Linear)": {
+      "mean_accuracy": 0.46789473684210525,
+      "std_accuracy": 0.0667487952104745,
+      "mean_precision": 0.46646464646464647,
+      "std_precision": 0.04613143588264108,
+      "mean_recall": 0.52,
+      "std_recall": 0.1511111111111111,
+      "mean_auc": 0.4461111111111111,
+      "std_auc": 0.07225640216839604,
+      "ci_accuracy": [
+        0.3752325539721193,
+        0.5605569197120912
+      ],
+      "ci_auc": [
+        0.3458031440512879,
+        0.5464190781709344
+      ],
+      "p_value_accuracy": 0.39053891607912405,
+      "p_value_auc": 0.2100743772272627,
+      "significant": false
+    }
+  }
+}

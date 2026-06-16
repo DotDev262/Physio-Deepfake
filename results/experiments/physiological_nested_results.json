@@ -1,0 +1,7 @@
+{
+  "mean_accuracy": 0.6333333333333333,
+  "mean_auc": 0.6906172839506173,
+  "p_value": 0.0625,
+  "avg_threshold": 0.3,
+  "method": "nested_cv_threshold"
+}
